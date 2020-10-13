@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+<style>
+	body{
+		margin:0px;
+		background-color:#efefef;
+	}
+	
+	#mainDiv{
+		margin:0px auto;
+		padding:20px;
+		width:800px;
+		background-color:#fff;
+	}
+	
+	#logo{
+		height:188px;
+	}
+	
+	#logo>img{
+		height:188px;
+		width:360px;
+	}
+	
+	#logFrm{
+		position:absolute;
+		background-color:pink;
+		width:800px;
+	}
+	
+	#logFrm>div:first-child{
+		width:650px;
+		height:250px;
+		background-color:lightblue;
+	}
+	
+	input:not(type=submit){
+		width:300px;
+		height:50px;
+		border:1px solid #ddd;
+		font-size:20px;
+		font-weight:bold;
+		margin-bottom:10px;
+	}
+	
+	input[type=submit]{
+		width:300px;
+		height:50px;
+		background-color:rgb(77, 139, 235);
+		border:1px solid #ddd;
+		font-size:20px;
+		color:#fff;
+	}
+	
+	#ad{
+		border:1px solid #ddd;
+		width:250px;
+		height:250px;
+	}
+</style>
+</head>
+<body>
+<div id="mainDiv">
+	<div id="logo" class="bar">
+		<a href="https://www.daum.net"><img src="img/logo.png"/></a>
+	</div>
+	<div id="logFrm" class="bar">
+		<div><!--  로그인 폼  -->
+			<form method="post" action="login.jsp" id="frm">
+				<input type="text" id="userid" name="userid" maxlength="20" placeholder=" 아이디 입력"/>
+				<input type="password" id="userpwd" name="userpwd" maxlength="20" placeholder=" 비밀번호 입력"/>
+				<input type="submit" value="로그인"/>
+			</form>
+			<div id="logState" style="overflow:auto;"><!--  로그인 상태유지 -->
+				<div><input type="checkbox" name="check"/>로그인 상태 유지</div>
+				<div><a href="#">IP보안</a></div>
+				<span>ON</span>
+			</div>
+			<div id="search">
+				<a href="#">아이디 찾기</a>
+				<a href="#">비밀번호 찾기</a>
+			</div>
+		</div>
+		<img src="img/ad.png"/>
+		<hr/>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Daum 로그인</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	body{
+		margin:0px;
+		background-color:#ddd;
+	}
+	#mainDiv{
+		width:700px;
+		height:100vh;
+		margin:0px auto;
+		padding:10px;
+		background-color:#fff;
+	}
+	.bar{
+		border-bottom:solid 2px #ddd;
+	}
+	#logo{
+		height:90px;
+		text-align:center;
+	}
+	#logo img{
+		height:80px;
+	}
+	#logFrm{
+		padding:50px 40px 60px;
+		overflow:auto;
+	}
+	#logFrm>*, #logState>div{
+		float:left;
+	}
+	#logFrm>div{
+		width:300px;
+		margin-right:70px;
+	}
+	#logFrm>img{
+		border:1px solid #ddd;
+	}
+	#frm>input:not(type=submit){
+		width:297px;
+		padding:0px;
+		height:50px;
+		border:1px solid #ddd;
+		font-size:20px;
+		font-weight:bold;
+	}
+	#frm>input[type=submit]{
+		width:300px;
+		height:50px;
+		background-color:rgb(77, 139, 235);
+		border:1px solid #ddd;
+		font-size:20px;
+		color:#fff;
+	}
+	/* 로그인 상태유지 */
+	#logState>div{
+		width:50%;
+		color:#ddd;
+	}
+	#logState>div:last-child{
+		text-align:right;
+	}
+	#logState span{
+		color:rgb(77, 139, 235);
+		font-weight:bold;
+	}
+	/* 아이디 비밀번호 찾기*/
+	#search{
+		text-align:center;
+	}
+	a:link, a:visited, a:hover{
+		text-decoration:none;
+		color:gray;
+	}
+</style>
+<script>
+	$(function(){
+		$('#frm').submit(function(){
+			if($('#userid').val()==""){
+				alert("아이디를 입력하세요");
+				return false;
+			}
+			if($('#userpwd').val()==""){
+				alert("비밀번호를 입력하세요");
+				return false;
+			} 
+			return true;
+		});
+	});
+</script>
+</head>
+<body>
+<div id="mainDiv">
+	<div id="logo" class="bar">
+		<a href="https://www.daum.net"><img src="img/logo.png"/></a>
+	</div>
+	<div id="logFrm" class="bar">
+		<div><!--  로그인 폼  -->
+			<form method="post" action="login.jsp" id="frm">
+				<input type="text" id="userid" name="userid" maxlength="20" placeholder=" 아이디 입력"/>
+				<input type="password" id="userpwd" name="userpwd" maxlength="20" placeholder=" 비밀번호 입력"/>
+				<input type="submit" value="로그인"/>
+			</form>
+			<div id="logState" style="overflow:auto;"><!--  로그인 상태유지 -->
+				<div><input type="checkbox" name="check"/>로그인 상태 유지</div>
+				<div><a href="#">IP보안</a></div>
+				<span>ON</span>
+			</div>
+			<div id="search">
+				<a href="#">아이디 찾기</a>
+				<a href="#">비밀번호 찾기</a>
+			</div>
+		</div>
+		<img src="img/ad.png"/>
+		<hr/>
+	</div>
+</div>
+</body>
+</html>
